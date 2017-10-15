@@ -29,6 +29,12 @@ docker run -d -p 8080:8080 --name=swarm-viz \
  open http://$(docker-machine ip manager-1):8080
 
 
+Init
+----
+eval $(docker-machine env manager-1)
+docker swarm init --advertise-addr $(docker-machine ip manager-1)
+
+
 join
 -----
 Switch to node 1
